@@ -36,19 +36,22 @@ class _GridState extends State<Grid> {
         title: Text("Staggerd GridView"),
         backgroundColor: Colors.brown,
       ),
-      backgroundColor: Colors.black,
-      body: Container(
-        child: StaggeredGridView.count(
-          crossAxisCount: 4,
-          staggeredTiles: _cardTile,
-          children: items.map((item) {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.asset(item.img, fit: BoxFit.cover,),
-            );
-          }).toList(),
-          mainAxisSpacing: 4.0,
-          crossAxisSpacing: 4.0,
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: StaggeredGridView.count(
+            crossAxisCount: 4,
+            staggeredTiles: _cardTile,
+            children: items.map((item) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.asset(item.img, fit: BoxFit.cover,),
+              );
+            }).toList(),
+            mainAxisSpacing: 4.0,
+            crossAxisSpacing: 4.0,
+          ),
         ),
       )
 
